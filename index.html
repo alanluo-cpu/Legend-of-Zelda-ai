@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legend of Zelda - Interactive Adventure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="ui-panel">
+            <div class="health-container">
+                <span class="ui-label">Health:</span>
+                <div class="hearts">
+                    <span class="heart">♥</span>
+                    <span class="heart">♥</span>
+                    <span class="heart">♥</span>
+                </div>
+            </div>
+            <div class="score-container">
+                <span class="ui-label">Score:</span>
+                <span id="score">0</span>
+            </div>
+            <div class="rupees-container">
+                <span class="ui-label">Rupees:</span>
+                <span id="rupees">0</span>
+            </div>
+        </div>
+        
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        
+        <div class="controls">
+            <p>Use WASD to move Link</p>
+            <p>Walk into chests to collect rupees</p>
+            <p>Avoid enemies or fight them with math!</p>
+            <p>Collect hearts to restore health</p>
+            <p>Reach 100 points to free Zelda!</p>
+        </div>
+        
+        <!-- Combat Modal -->
+        <div id="combatModal" class="modal">
+            <div class="modal-content">
+                <h2>Combat!</h2>
+                <p id="mathProblem">Solve: 5 + 3 = ?</p>
+                <input type="number" id="mathAnswer" placeholder="Your answer">
+                <button id="submitAnswer">Submit</button>
+                <div id="combatResult"></div>
+            </div>
+        </div>
+        
+        <!-- Victory Modal -->
+        <div id="victoryModal" class="modal">
+            <div class="modal-content">
+                <h2>Congratulations!</h2>
+                <p>You have freed Princess Zelda!</p>
+                <p>Your final score: <span id="finalScore">0</span></p>
+                <button onclick="location.reload()">Play Again</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
